@@ -1,1 +1,1 @@
-# projeckt-eda github.io
+# projeckt-eda.github.io
