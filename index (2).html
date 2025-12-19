@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Für Eda ❤️</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      line-height: 1.6;
+      margin: 0 auto;
+      animation: fadeInUp 2.5s ease-in-out;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: rise 8s linear infinite;
+      opacity: 0.7;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes rise {
+      0% {
+        bottom: -10%;
+        transform: translateX(0) rotate(45deg) scale(0.8);
+        opacity: 0;
+      }
+      20% { opacity: 0.8; }
+      100% {
+        bottom: 110%;
+        transform: translateX(100px) rotate(45deg) scale(1.3);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Eda ❤️</h1>
+    <p>
+      Eda,
+      <br /><br />
+      ich liebe dich, mein Herz.
+      <br /><br />
+     
+    </p>
+  </div>
+
+  <!-- Herzen -->
+  <script>
+    const heartCount = 25;
+    for (let i = 0; i < heartCount; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 5 + Math.random() * 5 + 's';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      heart.style.transform = `scale(${Math.random() + 0.5}) rotate(45deg)`;
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
